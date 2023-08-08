@@ -17,7 +17,6 @@ h1{
     font-size: 100px; /* Adjust the font size as needed */
     text-align: left;
     margin: 130px;
-    
 }
 p {
   font-family: 'Courier New', Courier, monospace;
@@ -514,8 +513,8 @@ button {
 		font-size: 14px;
 	}
 	.brandlogo img {
-    margin-left: -150%;
-		width: 65px;
+    margin-left: 5;
+		width: 45px;
 	}
   body {
     min-height: 100vh;
@@ -549,6 +548,11 @@ button {
 }
 
 @media (max-width: 768px) {
+	  .brandlogo img {
+    margin-left: 5;
+		width: 45px;
+	}
+
   .h1 { 
     text-align: center;
   }
