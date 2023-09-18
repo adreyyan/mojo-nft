@@ -1,60 +1,98 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="comingsoon.css">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" type="image/png" href="img/fav.png">
-
-    <title>Gallery</title> 
-</head>
+	<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gallery</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="gallery.css">
+		<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+		<link rel="shortcut icon" type="image/png" href="img/fav.png">
+	</head>
 <body>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    
-    <header class="header" id="header">
-        <nav class="navbar container">
-           <a href="index.html" class="brandlogo"><img src="img/whitelogo.png" /></a>
-           <div class="burger" id="burger">
-              <span class="burger-line"></span>
-              <span class="burger-line"></span>
-              <span class="burger-line"></span>
-           </div>
-           <div class="menu" id="menu">
-              <ul class="menu-inner">
-               <li class="menu-item"><a href="index" class="menu-link">Home</a></li>
-               <li class="menu-item"><a href="magiccity" class="menu-link">Magic City</a></li>
-               <li class="menu-item"><a href="gallery" class="menu-link">Gallery</a></li>
-               <li class="menu-item"><a href="tome" class="menu-link">The Magician's Tome</a></li>
-               <li class="menu-item"><a href="comingsoon" class="menu-link">Shop</a></li>
-               <li class="menu-item"><a href="comingsoon" class="menu-link">Rewards Center</a></li>
-              </ul>
-           </div>
-           <a href="#" class="menu-block">Connect</a>
-        </nav>
-     </header>
+	<header class="header" id="header">
+		<nav class="navbar container">
+			 <a href="#" class="brandlogo"><img src="img/IMG_1031.png" /></a>
+			 <div class="burger" id="burger">
+					<span class="burger-line"></span>
+					<span class="burger-line"></span>
+					<span class="burger-line"></span>
+			 </div>
+			 <div class="menu" id="menu">
+					<ul class="menu-inner">
+						 <li class="menu-item"><a href="http://themojonft.com/" class="menu-link">Home</a></li>
+						 <li class="menu-item"><a href="magiccity" class="menu-link">Magic City</a></li>
+						 <li class="menu-item"><a href="gallery" class="menu-link">Gallery</a></li>
+						 <li class="menu-item"><a href="tome" class="menu-link">The Magician's Tome</a></li>
+						 <li class="menu-item"><a href="comingsoon" class="menu-link">Shop</a></li>
+						 <li class="menu-item"><a href="comingsoon" class="menu-link">Rewards Center</a></li>
+					</ul>
+			 </div>
+			 <a href="#" class="menu-block">Connect</a>
+		</nav>
+ </header>
+<!-- MAIN -->
+<div class="main">
+	<br>
+	<br>
+	<h1>GALLERY</h1>
+	<hr>
+	<br>
 
-     <h1>COMING SOON</h1>
+	<!-- Tabs Button -->
+	<div id="BtnContainer">
+		<button class="btn active" onclick="filterSelection('all')"> Show all</button>
+		<button class="btn" onclick="filterSelection('The Celestials')"> THE CELESTIALS</button>
+		<button class="btn" onclick="filterSelection('Mojo')"> MOJO</button>
+	</div>
 
-     <script  src="./streetscript.js"></script>
-     <div class="container">
-      <div class="content">
+	<div class="row">
+	
+		<!-- Human column -->
+		<div class="column The Celestials">
+			<div class="content">
+				<img src="celestial1.png" alt="The Celestials" />
+			</div>
+		</div>
+		<div class="column The Celestials">
+			<div class="content">
+				<img src="celestial2.png" alt="The Celestials" />
+			</div>
+		</div>
+		<div class="column The Celestials">
+			<div class="content">
+				<img src="celestial3.png" alt="The Celestials" />
+			</div>
+		</div>
+		<!-- End Human column -->
+		
+		<!-- Devil column -->
+		<div class="column Mojo">
+			<div class="content">
+				<img src="mojo1.jpeg" alt="Mojo" />
+			</div>
+		</div>
+		<div class="column Mojo">
+			<div class="content">
+				<img src="mojo2.jpeg" alt="Mojo" />
+			</div>
+		</div>
+		<div class="column Mojo">
+			<div class="content">
+				<img src="mojo3.jpeg" alt="Mojo" />
+			</div>
+		</div>
+		<div class="column Mojo">
+			<div class="content">
+				<img src="mojo4.jpeg" alt="Mojo" />
+			</div>
+		</div>
 
-    <div class="image">
-        <img src="img/IMG_1008(1).png" alt="Image description">
-      </div>
-    
-    <script src="faq.js"></script>
+	</div>
+	<!-- END Portfolio Gallery Grid -->
+
+</div>
+<!-- END MAIN -->
+
+<script src="gallery.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
