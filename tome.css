@@ -18,7 +18,8 @@ h1{
   height: 90vh;
   margin: 0;
   text-align: center;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Spot', sans-serif; /* Use a fallback font like sans-serif */
+  font-size: small;
   font-size: medium;
 }
 .music-player-container {
@@ -303,8 +304,8 @@ video {
   row-gap: 1.25rem;
 }
 .menu-link {
-	font-family: inherit;
-	font-size: 18px;
+  font-family: 'Spot', sans-serif; /* Use a fallback font like sans-serif */
+	font-size: 12px;
 	font-weight: 500;
 	line-height: 1.5;
 	color: hsl(206, 5%, 100%);
