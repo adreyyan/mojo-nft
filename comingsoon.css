@@ -14,9 +14,10 @@ body {
   
 }
 h1{ 
-    font-size: 100px; /* Adjust the font size as needed */
+  font-family: 'YourCustomFont', sans-serif; /* Use a fallback font like sans-serif */
+    font-size: 90px; /* Adjust the font size as needed */
     text-align: left;
-    margin: 130px;
+    margin: 150px;
 }
 p {
   font-family: 'Courier New', Courier, monospace;
@@ -288,8 +289,8 @@ button {
   row-gap: 1.25rem;
 }
 .menu-link {
-	font-family: inherit;
-	font-size: 18px;
+  font-family: 'Spot', sans-serif; /* Use a fallback font like sans-serif */
+	font-size: 12px;
 	font-weight: 500;
 	line-height: 1.5;
 	color: hsl(206, 5%, 100%);
@@ -306,6 +307,7 @@ button {
     background-position: 0%;
 }
 .menu-block {
+  font-family: 'Spot', sans-serif; /* Use a fallback font like sans-serif */
     border: 2px solid #d80221;
     position: relative;
     display: inline-block;
