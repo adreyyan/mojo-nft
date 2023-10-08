@@ -365,7 +365,6 @@ video {
     justify-content: center;
 	}
   .menu {
-    color: azure;
     position: relative;
     top: 0;
     width: auto;
@@ -513,20 +512,13 @@ video {
 }
 
 @media (max-width: 600px) {
-  .menu-link {
-    font: white; /* Change the menu item text color to white */
-  }
+  
 
-  .burger-line {
-    background-color: white; /* Change burger lines color to white */
-  }
   .brandlogo img {
-    color: white;
     margin-left: 5;
 		width: 45px;
 	}
 	.menu-block {
-    color: white;
 		padding: 5px 30px;
 		font-size: 14px;
 	}
