@@ -201,6 +201,7 @@ video {
   margin-bottom: 1rem;
 }
 .heading-lg {
+
   font-size: clamp(2.179rem, 5vw, 3.176rem);
   font-weight: 700;
   line-height: 1.15;
@@ -268,13 +269,14 @@ video {
   height: auto;
   padding: 4rem 0 3rem;
   overflow: hidden;
-  background-color: hsl(214, 21%, 6%);
+  background-color: hsl(210, 6%, 50%);
+  opacity: 70%;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
      0 2px 4px -1px rgba(0, 0, 0, 0.06);;
   transition: all 0.4s ease-in-out;
   z-index: 1;
 }
-.menu.is-active {
+.menu.is-active { 
   top: 0;
   width: 100%;
   height: auto;
@@ -291,7 +293,7 @@ video {
 	font-size: 12px;
 	font-weight: 500;
 	line-height: 1.5;
-	color: hsl(0, 0%, 2%);
+	color: hsl(0, 1%, 51%);
 	text-transform: uppercase;
 	transition: all 0.3s ease;
 	-webkit-background-clip: text;
@@ -305,7 +307,7 @@ video {
     background-position: 0%;
 }
 .menu-block {
-    font-family: 'Spot', sans-serif; /* Use a fallback font like sans-serif */
+  font-family: 'Spot', sans-serif; /* Use a fallback font like sans-serif */
     border: 2px solid #d80221;
     position: relative;
     display: inline-block;
@@ -363,6 +365,7 @@ video {
     justify-content: center;
 	}
   .menu {
+    color: azure;
     position: relative;
     top: 0;
     width: auto;
@@ -372,13 +375,11 @@ video {
     box-shadow: none;
   }
   .menu-inner {
+    
     display: flex;
     flex-direction: row;
     column-gap: 2rem;
     margin: 0 auto;
-  }
-  .menu-link {
-    text-transform: capitalize;
   }
   .menu-block {
     margin-left: 2rem;
@@ -406,6 +407,7 @@ video {
 }
 @media only screen and (min-width: 48rem) {
   .burger {
+    color: white;
     display: none;
     visibility: hidden;
   }
@@ -421,7 +423,7 @@ video {
   outline: none;
   opacity: 1;
   transform: rotate(0deg);
-  background-color: hsl(206, 5%, 100%);
+  background-color: hsl(0, 0%, 3%);
   transition: 0.25s ease-in-out;
 }
 .burger-line:nth-child(1) {
@@ -511,11 +513,20 @@ video {
 }
 
 @media (max-width: 600px) {
+  .menu-link {
+    font: white; /* Change the menu item text color to white */
+  }
+
+  .burger-line {
+    background-color: white; /* Change burger lines color to white */
+  }
   .brandlogo img {
+    color: white;
     margin-left: 5;
 		width: 45px;
 	}
 	.menu-block {
+    color: white;
 		padding: 5px 30px;
 		font-size: 14px;
 	}
