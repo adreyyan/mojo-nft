@@ -17,11 +17,264 @@
    <title>Home</title> 
 </head>
 <body>
+   <style>
+      @font-face {
+      font-family: 'Spot';
+      src: url('img/StyreneA-Light-Trial-BF63f6cbd99dc3e.otf') format('truetype');
+      }
+
+      @font-face {
+      font-family: 'YourCustomFont';
+      src: url('img/StyreneB-Black-Trial-BF63f6cbe3dc69b.otf') format('truetype');
+      }
+   body {
+       justify-content: center;
+       align-items: center;
+       margin: 0;
+       font-family: 'YourCustomFont', sans-serif; /* Use a fallback font like sans-serif */
+       background-color: #d2d2d2;
+       color: #000;
+   }
+           
+   .main {
+       width: 100%;
+   }
+
+   .dark-bg {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: 400px;
+       background: #131e25;
+   }
+
+   .movingX {
+       position: relative;
+       top: 7px;
+       animation: movingX 20s linear infinite;
+   }
+
+   .wallet-check {
+       text-align: center;
+       margin: 20px 0;
+   }
+
+   .wallet-check-button {
+       margin-top: 20px;
+   }
+
+   .title {
+       
+       font-size: 24px;
+       margin-bottom: 10px;
+   }
+
+   #wallet-input {
+       padding: 10px;
+       font-size: 14px; /* Updated font size to 14px */
+       width: 50%; /* Adjust the width as needed */
+       background-color: rgba(255, 255, 255, 0.1);
+       border: none;
+       color: #000;
+       margin: 0 auto; /* Center the input field horizontally */
+   }
+
+   #wallet-input::placeholder {
+       text-align: center; /* Center the placeholder text */
+         font-family: 'Spot', Arial, sans-serif;
+   }
+
+   #check-button {
+       padding: 10px 20px;
+       font-size: 16px;
+       background-color: #b33d2a;
+       color: #000;
+       border: none;
+       cursor: pointer;
+       transition: background-color 0.3s ease;
+       border-radius: 10px;
+   }
+   .wallet-check-button button {
+   font-family: 'Spot', Arial, sans-serif; /* Apply Spot font to the button within .wallet-check-button */
+   font-size: 10px;
+}
+
+   #check-button:hover {
+       background-color: #d80221;
+   }
+
+   .result {
+       font-size: 18px;
+       margin-top: 20px;
+       margin-bottom: 10px;
+       color: red;
+   }
+
+   .congrats-result {
+       color: #228B22;
+       font-size: 18px;
+       margin-top: 20px;
+       margin-bottom: 10px;
+   }
+
+   .result,
+   .congrats-result {
+       font-family: 'YourCustomFont', sans-serif;
+   }
+
+   @keyframes movingX {
+       0% {
+           -webkit-transform: translateX(0) rotateY(0deg);
+           transform: translateX(0) rotateY(0deg);
+       }
+       50% {
+           -webkit-transform: translateX(calc(100vw - 100%));
+           transform: translateX(calc(100vw - 100%));
+       }
+       51% {
+           -webkit-transform: translateX(calc(100vw - 100%)) rotateY(180deg);
+           transform: translateX(calc(100vw - 100%)) rotateY(180deg);
+       }
+       100% {
+           -webkit-transform: translateX(0) rotateY(180deg);
+           transform: translateX(0) rotateY(180deg);
+       }
+   }
+
+   @media (max-width: 576px) {
+       .movingX {
+           width: 230px;
+       }
+   }
+</style>
+</head>
+<body>
+<body>
+   <br>
+   <br>
+   <br>
+   <br>
+   <div class="main">
+       <img class="movingX" src="img/pixelated.png" alt="tank" />
+   </div>
+   
+   <div class="wallet-check">
+       <div class="title">The Celestials: Whitelist Checker</div>
+       <input type="text" id="wallet-input" placeholder="Enter your wallet address">
+       <div class="wallet-check-button">
+           <button id="check-button" onclick="checkWhitelist()">Check Wallet</button>
+       </div>
+       <div id="result" class="result"></div>
+   </div>
+
+   <script>
+       // List of whitelisted wallet addresses (replace with your own list)
+       const whitelist = [
+           "4KPG9KjhQuAPjsqCFu2wBSuZwjxx67aUk2iFPaCoDLB7",
+           "8wDsT8fZk1oKceXxEM7ZmsSMAXZ8SXid1CqxiqsdMBWB",
+           "2sMn4FS3qxDMoEajYEdGX2AWCjWLUTGfDbb7PHf9u8jF",
+           "ASwgysRix6EUpfRwj7PtKCCd7JD6cjUfNVJMjtQKs6qf",
+           "9QGH4MaxDqRwoPsbbcUutCHeDiFnTa2J53yG5fSrez2V",
+           "H9oLwuVGCX59t1fnXDvmXDjsbqDN1kM44YUWEwagtkz3",
+           "32fR94zVt86g2DmNNnNBnziS41iESMhGUn389GSHzPjF",
+           "Gj9CYw4TsQGKhMJ8Qd9rhmKxPZkP8fhVCPN9BbzhZqar",
+           "8ow3SpPDVVgchvpm15ynwW4Y8vGK1BhGvfF4eRca3k2A",
+           "2bRGLL1XmPHjgSkxZAqqoXRjnmeqeuggHt22Z9qNK7ep",
+           "EdTQESJu7F25XJFvjDbdCoSbjPnBB2yQAsBUxnpyUQXS",
+           "GQ7ARnsyauCyR8jk6UQ9d8rQsQR518URN5zkKascd85B",
+           "8BXjJCJuatSMkgYTPrV3MRG7Cd1m8z5tqbVv5s8yw1C5",
+           "CFLVfLw5uAawiKU7jtb6MDMysxW8fppYzwmk7dSW8LDc",
+           "Fi3Pd8bFrkXVXftGaLsBSgeGHR18mgav9dgSzCnzB7DV",
+           "CmujpE7gPGTFVVF5R1X2bSxByDjyjCQWmwvTLzW9bG68",
+           "3JvYCTiKwTTweteE8LdHsFoRXrRRr5HGcyqHkEq2hq7V",
+           "8LDetG2FcSzxBhea15KPh1ihJMEN388SHGEowUBFXGmG",
+           "9BSZBAD29NimEceM6nftacrQBX2f6siEH3kxkejvLe2F",
+           "6SYADMjYDjodNartYK5cPdsAG6PvyC8KkiY5tkFATwNt",
+           "En6w9rrapguUFds98h69mNaEHiLS5M5hnA8psjCcgg7T",
+           "EsPwbYVe8d7MrXDzyn4jGBNUywH1eKh5Ww1R5Zkuzhe",
+           "FS6g4Yy8Aeiq2JJUM82wunoLrJQdzLFiz4ywRisjnVSg",
+           "9miKLvYVmZAxDf2h9vYj4MFpw69fhQuZib9rsNRFnkqF",
+           "C79EnDk7yi94YjPs3q4aty5PapvzXZAPBSexq8vQwaMt",
+           "6PZuNMZYhS1oHfQ4LxbokthpnZmCW5Xi6iAA2hAuvTtH",
+           "CbPvFWN1rHJD7FGAzZta8YyxdPwWPDzbjvmuZNwEaqks",
+           "6i46aw1t6rHuvVhq44dHDJLxq6CFqtM6xt6fbsnz2L5e",
+           "Du214E2dv4x6JBE7HCn8D4ooq6jbetoE6vjUPetPhk6y",
+           "56BnkPh5AMjRntpd5jHTKRmspRLvS4SfiHNGQABq4E14",
+           "2mYWkTvVj62w3tzMxq3ivhBMFT4QfKFXDigWNpideTvR",
+           "CCHVNF5re4BydZN61Bu9TNNX1xRGZ6ov5NfkEx79XDTd",
+           "75BtgYrmaN3noHXpGAXpBWxwrmMt8X8GKjyWj1xg4e4y",
+           "2sSwNJzBhPMBrg7DwMuMVQ6hqAwu6fc5GEodY37q3Ymm",
+           "vsi64Z1LBS98nrtp8FaZDS8YyNUHphJjKBNQaxUoCwe",
+           "9nXTtXKcp3ZkXoiGB9LTtj2ctvcMAeoM1CEShDsFBvNL",
+           "Bd8krZApMP4xVMaa8cg22VFVx2QFmdAFndNQ35QHWv1g",
+           "8PZjFXA8BzNfKdbvKGJruSxo2wPKHS9AiU2kHuNLwgbq",
+           "CALRkHPDvn3BQCZAJPdMqLA7niPFHFNbKA4ckPJTXgxL",
+           "HjEMWGgnEn6yzQ5WJJMGF5KDJYrP6WZnMNVng2XTzXNQ",
+           "9Rdppv9THjomA9NBdSu21U1e3aPxYrB3UTa2UDBdEbt1",
+           "3PiBa6492MwHDtA97XTWQeqTyTTiLbwPqUxMRxVkq5zv",
+           "9SCh6CsWcF4G2Gops572Y8TApoahtokquPe89CDCMqAL",
+           "B5uvi1XP3WrNHazMX2dsdAA96zwLEc3J8Hecroo9FwuG",
+           "41RzBTBQW3wVpEkAuPGtqNLJouuudSQtzAwuXArhzHgT",
+           "4KbJtaz9iJqt7pbVs39zqc9ZPjd8Uz1y6Biw3HRd61Uc",
+           "2ArDzojMgwguxb89kbzR4stPKBSPrwz6Mirn5RnF4Kpf",
+           "DrPoUkFR91jtx9BnRBxhyarL24CxkLxvhhtrkM282sF3",
+           "5eft84cQx3BqXi5pniSzepsqJ344aWgTHDcrRV4k8Mcd",
+           "D7bM5iGdYHd2SJXgo7NNapPbxcM8tMxdRX2L1NqKieaU",
+           "HXeCQeSJS6yDddsPa7QCjoRtjcx3QijG1CHY7Twy7dqY",
+           "9sdPq6RBJgCVTYavGYU7DJstKomSC6kvqZRUYuP8juHg",
+           "FFHHdWhLUAmDojqPp1pjYcufMEVafByJYJXQpBwX9Twy",
+           "EXK5HrQod6oQnqQaw9rptC9v9mkMGAT9HLAtnogxUaqQ",
+           "HivstpfgcgmYLuep6i6v9A2T9ZjBCeYvygDycGp9rTKo",
+           "D7LYXESy8Exe14rNYJbfKNUe4G33ydD3q1XGzoUgoQrr",
+           "93sLRzXksWbQGoj8pVZszhncfvE8kQFRDmQSR9extvTn",
+           "GqTck6XVWCy8APJREX7QUFJbAFHwjWo4fgua242mDyaa",
+           "B4d4ATs1nYArByWmoCuUEMKtn7qdYQch2pkKhmYDre2T",
+           "Ah6QKv4t4SoxbEmrperbHvVJCXa8kWMoNTzEHxvMmzrw",
+           "7aDtvJkrFwDVvHvoofX5RfUbbfWx7pWoLx2gRTYo8ER7",
+           "ETEsodZvAfY2zP5cxBWmM1s8ox1DRYTNsccACCSBwPuz",
+           "52ZpzFTfUVj7DtAseMKRg9gPUFeXhLc7bA6g1DrdrHiD",
+           "AJVRGH9ee8h5NqYuFBmrA9Tv24FhkDWjnBUrVtXwAL2X",
+           "FNYbcwBxAn9voVjEgN8LTk66i2GUypwcV1GnDN94hkn7",
+           "26pQSfB2WuXnW2dP6vdeP1o9Hn1bWHDWjqaNAYD6bHLK",
+           "2f7YGhacQyMQ6Wbwecz2pjLpQDZz3whDjpQuo6zYk9tg",
+           "A83zBV1PmiuwKp5xTuEKbYpPhBxoFRK7hMN5V4QXc5Wj",
+           "zhWp7EFquRdtvNvwMWjxS7u5W5u2yN3Uajk5ddR6NSK",
+           "379VoXfZYZDKM5ivQMdzS9Zu4WqDHkAgHUmb1fTCkFu7",
+           "Eq3ExNftHsdVBjKf8dn17ZJW3ru4aDsu8VSe67aNW8Cz",
+           "E7BgJEX5wSx5QYZfSusGZQWn4c16LxiXCEizPnvZ3ok8",
+           "DqTHW3aDLE2xokTRS5AZNkh6fkyL8vXMdV4pvfoxTaND",
+           "DCQKwWQWHHTj6pRSNLCWR2ZJrfXMDMAQjmK2W1Thfw2x",
+           "2SEMrFGNbGikHD4ypHxP9s1hkEqRmctJKKpvUpBe6dsn",
+           "9bYKetSAznzmphkAct1BHjNqetTonsPSzePoYj22VTfX",
+           "FK2H5ykkb9CND7LCNYkA77zfFGDgpJWWM2nJfzTjQ7SJ",
+           "BRuzWLCDamgnxC6LjFgUJTFK86Az4PVJELREZTqFg9Ng",
+           "BKdVJnckm1Lf7Hpy8KrZahYLRXYuijaWf2hxjbSTBoHm",
+           "6gqttd5M6o2V7MzH8aQAdK44RyiaqZ8HzVm5gsvVt7vT",
+           "FHnXTooY56kqhQFkA19493PmaJ3wzH1aUQTN8JN68KWH",
+           "DtKVSho51yQcoVqMeVDueEiBj2pUm6aY3wLZUfZ5DUUd",
+           "89y4Mq7skf5cMMiRGemMShQqwnq7cvU3uUKne8anjWee",
+           "7FeNo7JiXRvEUeUgg8CTWt6w2zgwq3mrhS7tRGKvyNME",
+           "4KxP7stv96yzrq8t9H8B328aJQmYgREkB9NeXTJycjtt",
+       ];
+
+       function checkWhitelist() {
+           const input = document.getElementById("wallet-input").value;
+           const resultDiv = document.getElementById("result");
+
+           if (whitelist.includes(input)) {
+               resultDiv.textContent = "Congrats! You are whitelisted.";
+               resultDiv.className = "congrats-result";
+           } else {
+               resultDiv.textContent = "Sorry, you are not whitelisted.";
+               resultDiv.className = "result";
+           }
+       }
+   </script>
 
 <!-- Header Section -->
 <header class="header" id="header">
    <nav class="navbar container">
-      <a href="#" class="brandlogo"><img src="img/whitelogo.png" /></a>
+      <a href="#" class="brandlogo"><img src="img/IMG_1031.png" /></a>
       <div class="burger" id="burger">
          <span class="burger-line"></span>
          <span class="burger-line"></span>
@@ -29,12 +282,12 @@
       </div>
       <div class="menu" id="menu">
          <ul class="menu-inner">
-            <li class="menu-item"><a href="index" class="menu-link">Home</a></li>
-            <li class="menu-item"><a href="magiccity" class="menu-link">Magic City</a></li>
-            <li class="menu-item"><a href="gallery" class="menu-link">Gallery</a></li>
-            <li class="menu-item"><a href="tome" class="menu-link">The Magician's Tome</a></li>
-            <li class="menu-item"><a href="comingsoon" class="menu-link">Shop</a></li>
-            <li class="menu-item"><a href="comingsoon" class="menu-link">Rewards Center</a></li>
+            <li class="menu-item"><a href="index" class="menu-link">HOME</a></li>
+            <li class="menu-item"><a href="magiccity" class="menu-link">MAGIC CITY</a></li>
+            <li class="menu-item"><a href="gallery" class="menu-link">GALLERY</a></li>
+            <li class="menu-item"><a href="tome" class="menu-link">TOME</a></li>
+            <li class="menu-item"><a href="comingsoon" class="menu-link">SHOP</a></li>
+            <li class="menu-item"><a href="comingsoon" class="menu-link">REWARDS CENTER</a></li>
          </ul>
       </div>
       <a href="#" class="menu-block">Connect</a>
@@ -69,20 +322,6 @@
      </div>
    </div>
  </div>
-
-<!-- Main Section -->
-<main class="main">
-   <section class="section banner banner-section">
-      <div class="container banner-column">
-         <div class="banner-links">
-            <a href="#" class="fab fa-discord"></a></li>
-            <a href="https://twitter.com/themojonft" class="fab fa-twitter"></i></a>
-            <a href="#" class="fab fa-instagram"></i></a>
-            <a href="#" class="fab fa-youtube"></i></a>
-         </div>
-      </div>
-   </section>
-</main>
 
   <script  src="./script.js"></script>
   <script src="main.js"></script>
