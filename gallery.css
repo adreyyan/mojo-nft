@@ -5,7 +5,8 @@
 
 body {
     padding: 20px;
-    font-family: "Josefin Sans", sans-serif;
+    font-family: 'Spot', sans-serif; /* Use a fallback font like sans-serif */
+
     background-image: rgb(73, 66, 66);
 }
 
@@ -16,7 +17,7 @@ body {
 }
 
 h1 {
-	font-size: 30px;
+	font-size: 20px;
 	color: black;
 	margin: 30px 0 30px 0;
 }
@@ -70,14 +71,15 @@ img {
 
 /* Style the buttons */
 .btn {
+  font-family: 'Spot', sans-serif; /* Use a fallback font like sans-serif */
 	border: none;
 	outline: none;
 	padding: 12px 16px;
 	background-color:#f1f1f1;
 	cursor: pointer;
 	border-radius: 20px;
-	font-size: 15px;
-	font-family: "Josefin Sans", sans-serif;
+	font-size: 12px;
+	
 }
 
 .btn:hover {
@@ -142,12 +144,6 @@ html {
   
 }
 
-body {
-	font-family: Satoshi, sans-serif;
-
-
-}
-
 a,
 button {
   cursor: pointer;
@@ -185,7 +181,7 @@ video {
   margin-bottom: 1rem;
 }
 .heading-lg {
-  font-family: Satoshi, sans-serif;
+  font-family: 'Spot', sans-serif; /* Use a fallback font like sans-serif */
   font-size: clamp(2.179rem, 5vw, 3.176rem);
   font-weight: 700;
   line-height: 1.15;
@@ -272,8 +268,8 @@ video {
   row-gap: 1.25rem;
 }
 .menu-link {
-	font-family: inherit;
-	font-size: 18px;
+  font-family: 'Spot', sans-serif; /* Use a fallback font like sans-serif */
+	font-size: 12px;
 	font-weight: 500;
 	line-height: 1.5;
 	color: white;
