@@ -305,6 +305,7 @@ video {
     background-position: 0%;
 }
 .menu-block {
+    font-family: 'Spot', sans-serif; /* Use a fallback font like sans-serif */
     border: 2px solid #d80221;
     position: relative;
     display: inline-block;
