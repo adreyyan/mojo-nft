@@ -15,7 +15,7 @@ body {
 }
 h1{ 
   font-family: 'YourCustomFont', sans-serif; /* Use a fallback font like sans-serif */
-    font-size: 90px; /* Adjust the font size as needed */
+    font-size: 70px; /* Adjust the font size as needed */
     text-align: left;
     margin: 150px;
 }
