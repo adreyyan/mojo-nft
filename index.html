@@ -1,71 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mojo</title>
-    <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.3/lottie_svg.min.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-        crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel='stylesheet' href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" />
-    <link rel="shortcut icon" type="image/png" href="img/fav.png">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mojo</title>
+   <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+   <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.3/lottie_svg.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<link rel='stylesheet' href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" />
+   <link rel="shortcut icon" type="image/png" href="img/fav.png">
 
-    <style>
-        @font-face {
-            font-family: 'Spot';
-            src: url('img/StyreneA-Light-Trial-BF63f6cbd99dc3e.otf') format('truetype');
-        }
-
-        @font-face {
-            font-family: 'YourCustomFont';
-            src: url('img/StyreneB-Black-Trial-BF63f6cbe3dc69b.otf') format('truetype');
-        }
-
-        body {
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-            font-family: 'YourCustomFont', sans-serif;
-            background: url('IMG_6177.png') no-repeat center center fixed;
-            background-size: cover;
-            color: #000;
-        }
-
-        .main {
-            width: 100%;
-        }
-
-        .dark-bg {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 400px;
-            background: #131e25;
-        }
-
-        .movingX {
-            position: relative;
-            top: 7px;
-            animation: movingX 20s linear infinite;
-        }
-    </style>
+   <title>Home</title> 
 </head>
 <body>
-    <!-- Your HTML content goes here -->
-    <header class="header" id="header">
-        <!-- Header content -->
-    </header>
-    <div class="music-player-container">
-        <!-- Music player content -->
-    </div>
+   <style>
+      @font-face {
+      font-family: 'Spot';
+      src: url('img/StyreneA-Light-Trial-BF63f6cbd99dc3e.otf') format('truetype');
+      }
 
-    <!-- JavaScript script tags go here -->
-    <script src="./script.js"></script>
-    <script src="main.js"></script>
+      @font-face {
+      font-family: 'YourCustomFont';
+      src: url('img/StyreneB-Black-Trial-BF63f6cbe3dc69b.otf') format('truetype');
+      }
+   body {
+       justify-content: center;
+       align-items: center;
+       margin: 0;
+       font-family: 'YourCustomFont', sans-serif; /* Use a fallback font like sans-serif */
+       background-color: #d2d2d2;
+       color: #000;
+   }
+           
+   .main {
+       width: 100%;
+   }
+
+   .dark-bg {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: 400px;
+       background: #131e25;
+   }
+
+   .movingX {
+       position: relative;
+       top: 7px;
+       animation: movingX 20s linear infinite;
+   }
+}
+
+  
+
+   
+</style>
+</head>
+<body>
+<!-- Header Section -->
+<header class="header" id="header">
+   <nav class="navbar container">
+      <a href="#" class="brandlogo"><img src="img/IMG_1031.png" /></a>
+      <div class="burger" id="burger">
+         <span class="burger-line"></span>
+         <span class="burger-line"></span>
+         <span class="burger-line"></span>
+      </div>
+      <div class="menu" id="menu">
+         <ul class="menu-inner">
+            <li class="menu-item"><a href="index" class="menu-link">HOME</a></li>
+            <li class="menu-item"><a href="magiccity" class="menu-link">MAGIC CITY</a></li>
+            <li class="menu-item"><a href="gallery" class="menu-link">GALLERY</a></li>
+            <li class="menu-item"><a href="tome" class="menu-link">TOME</a></li>
+            <li class="menu-item"><a href="comingsoon" class="menu-link">SHOP</a></li>
+            <li class="menu-item"><a href="comingsoon" class="menu-link">REWARDS CENTER</a></li>
+         </ul>
+      </div>
+      <a href="#" class="menu-block">Connect</a>
+   </nav>
+</header>
+<div class="music-player-container">
+   <div class="toggle-player">
+     <ion-icon name="remove-outline"></ion-icon>
+   </div>
+   <div class="avatar">
+     <img src="avatar5.png" alt="" />
+   </div>
+
+   <div class="player">
+     <div class="sound-bars-lottie">
+       <div class="sound-bars"></div>
+     </div>
+     <div class="track-info">
+       <div class="track-name">Track Name</div>
+       <div class="track-artist">Track Artist</div>
+     </div>
+     <div class="track-nav">
+       <div class="prev-track" onclick="prevTrack()">
+         <ion-icon name="play-back-sharp"></ion-icon>
+       </div>
+       <div class="playpause-track" onclick="playPauseTrack()">
+         <ion-icon name="play-sharp"></ion-icon>
+       </div>
+       <div class="next-track" onclick="nextTrack()">
+         <ion-icon name="play-forward-sharp"></ion-icon>
+       </div>
+     </div>
+   </div>
+ </div>
+
+  <script  src="./script.js"></script>
+  <script src="main.js"></script>
+
 </body>
 </html>
