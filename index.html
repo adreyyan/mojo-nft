@@ -18,6 +18,29 @@
 </head>
 <body>
    <style>
+body {
+    margin: 0;
+    font-family: 'YourCustomFont', sans-serif;
+    background-color: #d2d2d2;
+    color: azure;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f6f7f8 url("bgnew.png") center/cover no-repeat;
+}
+
+@media (min-width: 768px) {
+    body {
+        background-size: 130%;
+        background-position: center;
+    }
+}
+
+
+
+
+
       @font-face {
       font-family: 'Spot';
       src: url('img/StyreneA-Light-Trial-BF63f6cbd99dc3e.otf') format('truetype');
@@ -27,58 +50,40 @@
       font-family: 'YourCustomFont';
       src: url('img/StyreneB-Black-Trial-BF63f6cbe3dc69b.otf') format('truetype');
       }
-   body {
-       justify-content: center;
-       align-items: center;
-       margin: 0;
-       font-family: 'YourCustomFont', sans-serif; /* Use a fallback font like sans-serif */
-       background-color: #d2d2d2;
-       color: #000;
-   }
-           
-   .main {
-       width: 100%;
-   }
-
-   .dark-bg {
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       height: 400px;
-       background: #131e25;
-   }
-
-   .movingX {
-       position: relative;
-       top: 7px;
-       animation: movingX 20s linear infinite;
-   }
-}
-
   
 
-   
+      
+
+
+
+
 </style>
 </head>
 <body>
 <!-- Header Section -->
 <header class="header" id="header">
    <nav class="navbar container">
-      <a href="#" class="brandlogo"><img src="img/IMG_1031.png" /></a>
+      <a href="#" class="brandlogo"><img src="img/whitelogo.png" /></a>
       <div class="burger" id="burger">
          <span class="burger-line"></span>
          <span class="burger-line"></span>
          <span class="burger-line"></span>
       </div>
       <div class="menu" id="menu">
-         <ul class="menu-inner">
-            <li class="menu-item"><a href="index" class="menu-link">HOME</a></li>
-            <li class="menu-item"><a href="magiccity" class="menu-link">MAGIC CITY</a></li>
-            <li class="menu-item"><a href="gallery" class="menu-link">GALLERY</a></li>
-            <li class="menu-item"><a href="tome" class="menu-link">TOME</a></li>
-            <li class="menu-item"><a href="comingsoon" class="menu-link">SHOP</a></li>
-            <li class="menu-item"><a href="comingsoon" class="menu-link">REWARDS CENTER</a></li>
-         </ul>
+
+      <ul class="menu-inner">
+        <li class="menu-item"><a href="index" class="menu-link">HOME</a></li>
+        <li class="menu-item"><a href="magiccity" class="menu-link">MAGIC CITY</a></li>
+        <li class="menu-item"><a href="gallery" class="menu-link">GALLERY</a></li>
+        <li class="menu-item"><a href="tome" class="menu-link">TOME</a></li>
+        <li class="menu-item"><a href="comingsoon" class="menu-link">SHOP</a></li>
+        <li class="menu-item"><a href="comingsoon" class="menu-link">REWARDS CENTER</a></li>
+        <!-- Add Twitter and Discord links with target="_blank" to open in a new tab -->
+        <li class="menu-item"><a href="https://twitter.com/themojonft" class="menu-link" target="_blank">TWITTER</a></li>
+        <li class="menu-item"><a href="https://discord.gg/kDC5raWkzc" class="menu-link" target="_blank">DISCORD</a></li>
+    </ul>
+    
+      
       </div>
       <a href="#" class="menu-block">Connect</a>
    </nav>
